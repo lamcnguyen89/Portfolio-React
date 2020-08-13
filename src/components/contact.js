@@ -41,9 +41,9 @@ class Contact extends Component {
                                     My name: Lam C Nguyen<br />
                                     Email: lamcnguyen89@gmail.com<br />
                                     Contact Number: 407-925-3877<br />
-                                    <a href="https://github.com/lamcnguyen89" target="_blank">Visit my Github</a><br />
-                                    <a href="http://www.linkedin.com/in/lamcnguyen89" target="_blank">Visit my LinkedIn Profile</a><br />
-                                    <a href="https://drive.google.com/file/d/147rg_ZnJoThDnWRMXupbUYjnQk-vhjoe/view?usp=sharing" target="_blank">View my Resume</a>
+                                    <a href="https://github.com/lamcnguyen89">Visit my Github</a><br />
+                                    <a href="http://www.linkedin.com/in/lamcnguyen89">Visit my LinkedIn Profile</a><br />
+                                    <a href="https://drive.google.com/file/d/147rg_ZnJoThDnWRMXupbUYjnQk-vhjoe/view?usp=sharing">View my Resume</a>
                                 </p>
                             </article>
                         </article> 

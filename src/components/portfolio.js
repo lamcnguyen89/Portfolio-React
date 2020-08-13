@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from "./nav";
 import Footer from "./footer";
+ 
 
 class Portfolio extends Component {
     
@@ -24,12 +25,16 @@ class Portfolio extends Component {
                         {/*Row 01 Column 01*/}
                         <article className="col-sm-6 mt-3 p-3">
                         <article className="card">
-                            <a href="https://lamcnguyen89.github.io/Project-01--The-Electric-Art-Gallery/ " target="_blank">
-                            <img src="assets/images/The_Electric_Art_Gallery.png" className="card-img-top img-fluid" />
+                            <a 
+                                href="https://lamcnguyen89.github.io/Project-01--The-Electric-Art-Gallery/ " 
+                            >
+                                <img src="../../public/assets/images/The_Electric_Art_Gallery.png" 
+                                alt="Electric Art Gallery" 
+                                className="card-img-top img-fluid" />
                             </a>
                             <article className="card-body myLabel">
                             {/*The class myLabel is used to raise the textbox within the card vertically from the bottom so that it is on top of the image.*/}
-                            <a href="https://github.com/lamcnguyen89/Project-01--The-Electric-Art-Gallery" target="_blank"><h5 className="bg title">The Electric Art Gallery</h5></a> 
+                            <a href="https://github.com/lamcnguyen89/Project-01--The-Electric-Art-Gallery"><h5 className="bg title">The Electric Art Gallery</h5></a> 
                             </article>
                         </article>
                         </article>
@@ -38,11 +43,13 @@ class Portfolio extends Component {
                         {/*Row 01 Column 02*/}
                         <article className="col-sm-6 mt-3 p-3">
                         <article className="card">
-                            <a href="https://lamcnguyen89.github.io/Weather-Dashboard/" target="_blank">
-                            <img src="assets/images/Weather_Dashboard.png" className="card-img-top img-fluid" />
+                            <a href="https://lamcnguyen89.github.io/Weather-Dashboard/">
+                            <img src=".../../assets/images/Weather_Dashboard.png"
+                            alt="Weather Dashboard"
+                            className="card-img-top img-fluid" />
                             </a>
                             <article className="card-body myLabel">    
-                            <a href="https://github.com/lamcnguyen89/Weather-Dashboard" target="_blank"><h5 className="bg title">Personal Weather Dashboard</h5></a>
+                            <a href="https://github.com/lamcnguyen89/Weather-Dashboard"><h5 className="bg title">Personal Weather Dashboard</h5></a>
                             </article>
                         </article>
                         </article>
@@ -56,11 +63,13 @@ class Portfolio extends Component {
                         {/*Row 02 Column 01*/}
                         <article className="col-sm-6">
                         <article className="card">
-                            <a href="https://lamcnguyen89.github.io/Daily-Planner/" target="_blank">
-                            <img src="assets/images/Daily_Planner.png" className="card-img-top img-fluid" />
+                            <a href="https://lamcnguyen89.github.io/Daily-Planner/">
+                            <img src="../../assets/images/Daily_Planner.png"
+                            alt="Daily Planner"
+                            className="card-img-top img-fluid" />
                             </a>
                             <article className="card-body myLabel">    
-                            <a href="https://github.com/lamcnguyen89/Daily-Planner" target="_blank"><h5 className="bg title">Personal Day Planner</h5></a>
+                            <a href="https://github.com/lamcnguyen89/Daily-Planner"><h5 className="bg title">Personal Day Planner</h5></a>
                             </article>
                         </article>
                         </article>
@@ -69,11 +78,13 @@ class Portfolio extends Component {
                         {/*Row 02 Column 02*/}
                         <article className="col-sm-6">
                         <article className="card">
-                            <a href="https://gitgudtogether.herokuapp.com/" target="_blank">
-                            <img src="assets/images/GitGud_Together.png" className="card-img-top img-fluid" />
+                            <a href="https://gitgudtogether.herokuapp.com/">
+                            <img src="../../assets/images/GitGud_Together.png"
+                            alt="GitGud Together"
+                            className="card-img-top img-fluid" />
                             </a>
                             <article className="card-body myLabel">    
-                            <a href="https://github.com/lamcnguyen89/GitGud-Together.git" target="_blank"><h5 className="bg title">GitGud Together Friend Finder</h5></a>
+                            <a href="https://github.com/lamcnguyen89/GitGud-Together.git"><h5 className="bg title">GitGud Together Friend Finder</h5></a>
                             </article>
                         </article>
                         </article>
@@ -86,11 +97,13 @@ class Portfolio extends Component {
                         {/*Row 03 Column 01*/}
                         <article className="col-sm-6">
                         <article className="card">
-                            <a href="https://drive.google.com/file/d/1ugvaW5thtiSsZuorMnHuIZ-tXupxlqLo/view" target="_blank">
-                            <img src="assets/images/MySQL_Employee_Tracker.png" className="card-img-top img-fluid" />
+                            <a href="https://drive.google.com/file/d/1ugvaW5thtiSsZuorMnHuIZ-tXupxlqLo/view">
+                            <img src="../../assets/images/MySQL_Employee_Tracker.png"
+                            alt="Employee Tracker"
+                            className="card-img-top img-fluid" />
                             </a>
                             <article className="card-body myLabel">    
-                            <a href="https://github.com/lamcnguyen89/Employee-Tracker--MySQL.git" target="_blank"><h5 className="bg title">Node/MySQL Employee Tracker</h5></a>
+                            <a href="https://github.com/lamcnguyen89/Employee-Tracker--MySQL.git"><h5 className="bg title">Node/MySQL Employee Tracker</h5></a>
                             </article>
                         </article>
                         </article>
@@ -98,11 +111,13 @@ class Portfolio extends Component {
                         {/*Row 03 Column 02*/}
                         <article className="col-sm-6">
                         <article className="card">
-                            <a href="https://docs.google.com/document/d/18Nd5b1dDCaT2WmdvrvKIUbwAX4N8e-woZa1YV426SuI/edit?usp=sharing" target="_blank">
-                            <img src="assets/images/Technical_Documentation.png" className="card-img-top img-fluid" />
+                            <a href="https://docs.google.com/document/d/18Nd5b1dDCaT2WmdvrvKIUbwAX4N8e-woZa1YV426SuI/edit?usp=sharing">
+                            <img src="../../assets/images/Technical_Documentation.png"
+                            alt="Technical Documentation"
+                            className="card-img-top img-fluid" />
                             </a>
                             <article className="card-body myLabel">    
-                            <a href="https://github.com/lamcnguyen89/Reverse-Engineering-Code--Sequelize.git" target="_blank"><h5 className="bg title">Technical Documentation</h5></a>
+                            <a href="https://github.com/lamcnguyen89/Reverse-Engineering-Code--Sequelize.git"><h5 className="bg title">Technical Documentation</h5></a>
                             </article>
                         </article>
                         </article>
