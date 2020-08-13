@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
-import Navbar from "./nav";
-import Footer from "./footer";
- 
 
 class Portfolio extends Component {
     
     render() { 
         return (  
             <>
-                <Navbar />
-
                 <main className="container p-3 mb-5">
                     {/** The portfolio section was arranged using the Bootstrap grid system.
                          * There are 3 rows. In the first 2 rows there are 2 columns. 
@@ -28,7 +23,7 @@ class Portfolio extends Component {
                             <a 
                                 href="https://lamcnguyen89.github.io/Project-01--The-Electric-Art-Gallery/ " 
                             >
-                                <img src="../../public/assets/images/The_Electric_Art_Gallery.png" 
+                                <img src="../../assets/images/The_Electric_Art_Gallery.png" 
                                 alt="Electric Art Gallery" 
                                 className="card-img-top img-fluid" />
                             </a>
@@ -126,9 +121,6 @@ class Portfolio extends Component {
                     {/*End Row 03*/}
 
                 </main>
-
-
-                <Footer />
             </>
 
         );

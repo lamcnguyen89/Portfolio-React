@@ -1,5 +1,7 @@
 body {
     background-image: url("../images/Tennis.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 main, footer, nav {

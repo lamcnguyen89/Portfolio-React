@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import Navbar from "./nav";
-import Footer from "./footer";
-
 
 class About extends Component {
     
@@ -9,7 +6,6 @@ class About extends Component {
         return ( 
             
             <>
-                <Navbar />
             
                 <main className="container p-2 my-4">
                     <h1 className="headingformats">About Me</h1>
@@ -45,8 +41,6 @@ class About extends Component {
                         </article>
                     </article>
                 </main>
-
-                <Footer />
             </>
 
             

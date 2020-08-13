@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import Navbar from "./nav";
-import Footer from "./footer";
 
 class Contact extends Component {
     render() { 
         return (  
             <>
-                <Navbar />
-
                 {/* This section contains the html for the contact form. 
                 The formatting for this form was taken off Bootstrap. */}
                 <main className="container p-2 my-4">
@@ -48,8 +44,6 @@ class Contact extends Component {
                             </article>
                         </article> 
                 </main>
-
-                <Footer />
             </>
         );
     }
