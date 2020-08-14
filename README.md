@@ -29,5 +29,5 @@ The Unlicense
 
 View deployed application [here](https://lamcnguyen89.github.io/Portfolio-React/)
 
-![Screenshot](./public/assets/images/About_Me_01.PNG)
+![Screenshot](./src/images/About_Me_01.PNG)
 
