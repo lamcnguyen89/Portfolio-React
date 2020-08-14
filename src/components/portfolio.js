@@ -23,7 +23,7 @@ class Portfolio extends Component {
                             <a 
                                 href="https://lamcnguyen89.github.io/Project-01--The-Electric-Art-Gallery/ " 
                             >
-                                <img src="../../assets/images/The_Electric_Art_Gallery.png" 
+                                <img src={require("../images/The_Electric_Art_Gallery.png")}
                                 alt="Electric Art Gallery" 
                                 className="card-img-top img-fluid" />
                             </a>
@@ -39,7 +39,7 @@ class Portfolio extends Component {
                         <article className="col-sm-6 mt-3 p-3">
                         <article className="card">
                             <a href="https://lamcnguyen89.github.io/Weather-Dashboard/">
-                            <img src=".../../assets/images/Weather_Dashboard.png"
+                            <img src={require("../images/Weather_Dashboard.png")}
                             alt="Weather Dashboard"
                             className="card-img-top img-fluid" />
                             </a>
@@ -59,7 +59,7 @@ class Portfolio extends Component {
                         <article className="col-sm-6">
                         <article className="card">
                             <a href="https://lamcnguyen89.github.io/Daily-Planner/">
-                            <img src="../../assets/images/Daily_Planner.png"
+                            <img src={require("../images/Daily_Planner.png")}
                             alt="Daily Planner"
                             className="card-img-top img-fluid" />
                             </a>
@@ -74,7 +74,7 @@ class Portfolio extends Component {
                         <article className="col-sm-6">
                         <article className="card">
                             <a href="https://gitgudtogether.herokuapp.com/">
-                            <img src="../../assets/images/GitGud_Together.png"
+                            <img src={require("../images/GitGud_Together.png")}
                             alt="GitGud Together"
                             className="card-img-top img-fluid" />
                             </a>
@@ -93,7 +93,7 @@ class Portfolio extends Component {
                         <article className="col-sm-6">
                         <article className="card">
                             <a href="https://drive.google.com/file/d/1ugvaW5thtiSsZuorMnHuIZ-tXupxlqLo/view">
-                            <img src="../../assets/images/MySQL_Employee_Tracker.png"
+                            <img src={require("../images/MySQL_Employee_Tracker.png")}
                             alt="Employee Tracker"
                             className="card-img-top img-fluid" />
                             </a>
@@ -107,7 +107,7 @@ class Portfolio extends Component {
                         <article className="col-sm-6">
                         <article className="card">
                             <a href="https://docs.google.com/document/d/18Nd5b1dDCaT2WmdvrvKIUbwAX4N8e-woZa1YV426SuI/edit?usp=sharing">
-                            <img src="../../assets/images/Technical_Documentation.png"
+                            <img src={require("../images/Technical_Documentation.png")}
                             alt="Technical Documentation"
                             className="card-img-top img-fluid" />
                             </a>

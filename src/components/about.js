@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import profile from "../images/Lam_Profile.jpg"
 
 class About extends Component {
     
@@ -15,7 +16,7 @@ class About extends Component {
                     
                             <article>
                                 <img 
-                                    src="assets/images/Lam_Profile.jpg" 
+                                    src={profile}
                                     alt="Profile of man named Lam Nguyen" 
                                     className="aboutImg mr-4 mb-4" 
                                     width="200px" 
