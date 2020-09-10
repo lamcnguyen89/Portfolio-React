@@ -6,6 +6,7 @@
 // include the path module to allow the JS file to move to the correct path to the specified file
 //=============================================
 const path = require("path");
+const router = require("express").Router();
 const nodemailer = require('nodemailer');
 require("dotenv").config();
 
@@ -16,45 +17,44 @@ const GMAIL_PASS = process.env.GMAIL_PASS
 // ROUTING
 //=============================================
 
-module.exports = function(app) {
+// POST- for sending form data that the user inputs in the contact form to gmail
+router.post("/contact", function(req,res) {
 
-    // POST- for sending form data that the user inputs in the contact form to gmail
-    app.post("/contact", function(req,res) {
-
-        // Create the SMTP server for Gmail
-        const smtpTrans = nodemailer.createTransport({
-            host: 'smtp.gmail.com',
-            port: 465,
-            secure: true,
-            auth: {
-                user: GMAIL_USER,
-                pass: GMAIL_PASS
+    // Create the SMTP server for Gmail
+    const smtpTrans = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
+        auth: {
+            user: GMAIL_USER,
+            pass: GMAIL_PASS
             }
         })
 
-        // Specify what the email will look like
-        const mailOpts = {
-            from: 'Your sender info here', // This is ignored by Gmail
-            to: GMAIL_USER,
-            subject: 'Message from my Personal Portfolio',
-            text: 
-`Name:${req.body.name} 
-Email Address:(${req.body.email})
+    // Specify what the email will look like
+    const mailOpts = {
+        from: 'Your sender info here', // This is ignored by Gmail
+        to: GMAIL_USER,
+        subject: 'Message from my Personal Portfolio',
+        text: 
+    `Name:${req.body.name} 
+    Email Address:(${req.body.email})
 
-Message: 
-${req.body.message}`
+    Message: 
+    ${req.body.message}`
+            }
+
+    // Attempt to send the email
+    smtpTrans.sendMail(mailOpts, (error, response) => {
+        if (error) {
+            res.redirect('/error') 
         }
-
-        // Attempt to send the email
-        smtpTrans.sendMail(mailOpts, (error, response) => {
-            if (error) {
-                res.redirect('/error') 
-            }
-            else {
-                res.redirect('/thanks') 
-            }
-        });
-
+        else {
+            res.redirect('/thanks') 
+        }
     });
+
+});
+
+module.exports = router;
   
-};
