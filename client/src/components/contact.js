@@ -6,7 +6,7 @@ class Contact extends Component {
     constructor(props) {
         // Remember that super() is called inside a react componnt only if it has a constructor. 
         // super(props) allows access to this.props in the constructor
-        // Source: https://hackernoon.com/setting-up-a-serverless-contact-form-in-react-using-nodemailer-and-express-19df9fdb20ed
+        // Source: https://blog.mailtrap.io/react-contact-form/
         super(props);
         this.state = {
             name: '',
@@ -23,14 +23,14 @@ class Contact extends Component {
 
         Axios({
           method: "POST", 
-          url:"http://localhost:3002/send", 
+          url:"http://localhost:666/send", 
           data: this.state
         }).then((response)=>{
           if (response.data.status === 'success'){
-            alert("Message Sent."); 
+            console.log("Message Sent."); 
             this.resetForm()
           }else if(response.data.status === 'fail'){
-            alert("Message failed to send.")
+            console.log("Message failed to send.")
           }
         })
       }

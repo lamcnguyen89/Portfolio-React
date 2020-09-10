@@ -39,11 +39,11 @@ module.exports = function(app) {
             to: GMAIL_USER,
             subject: 'Message from my Personal Portfolio',
             text: 
-        `Name:${req.body.name} 
-        Email Address:(${req.body.email})
+`Name:${req.body.name} 
+Email Address:(${req.body.email})
 
-        Message: 
-        ${req.body.message}`
+Message: 
+${req.body.message}`
                 }
 
         // Attempt to send the email
