@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 
+
 class Contact extends Component {
     constructor(props) {
         // Remember that super() is called inside a react componnt only if it has a constructor. 
@@ -10,41 +11,37 @@ class Contact extends Component {
         this.state = {
             name: '',
             email: '',
-            message: '',
-            sent: false,
-            buttonText: 'Send Message'
+            message: ''
+            
         }
     }
 
-    formSubmit = (e) => {
-        e.preventDefault()
+    formSubmit(e){
+        e.preventDefault();
 
-        this.setState({
-            buttonText: '...Sending'
+        console.log(this.state);
+
+        Axios({
+          method: "POST", 
+          url:"http://localhost:3002/send", 
+          data: this.state
+        }).then((response)=>{
+          if (response.data.status === 'success'){
+            alert("Message Sent."); 
+            this.resetForm()
+          }else if(response.data.status === 'fail'){
+            alert("Message failed to send.")
+          }
         })
-
-        let data = {
-            name: this.state.name,
-            email: this.state.email,
-            message: this.state.message
-        }
-
-        Axios.post('API_URI', data)
-            .then(res =>{
-                this.setState({sent:true}, this.resetForm())
-            })
-            .catch(()=>{
-                console.log('Message not sent')
-            })
-
-    }
+      }
+        
 
     resetForm = () => {
         this.setState({
             name: '',
             message: '',
-            email: '',
-            buttonText: 'Message Sent'
+            email: ''
+            
         })
     }
 
@@ -63,6 +60,7 @@ class Contact extends Component {
                                 <form
                                     id="contact-form"
                                     onSubmit = {(e) => this.formSubmit(e)}
+                                    method="POST"
                                 >
                                     <article className="form-group">
                                         <label htmlFor="name-input">Name</label>
@@ -105,7 +103,7 @@ class Contact extends Component {
                                         type="submit" 
                                         className="btn btn-primary mb-2"
                                     >
-                                        {this.state.buttonText}
+                                        Submit Message
                                     </button>
                                 </form>
                             </article>

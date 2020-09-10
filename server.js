@@ -3,7 +3,8 @@
 //=============================================
 
 const express = require("express")
-const routes = require("./routes")
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
 //=============================================
 // CREATE AND CONFIGURE SERVER
@@ -15,12 +16,15 @@ const app = express();
 
 // Sets the initial Port that the server will listen through for client-side requests.
 // process.env.PORT is a command that means that the server will listen to whatever number is in the environmental variable PORT. 
-const PORT = process.env.PORT || 666
+const PORT = process.env.PORT || 3002
 
 // Sets up the Express app to handle data parsing using middleware.
 // json and urlencoded are both part of bodyParse in Express: https://github.com/expressjs/body-parser
-app.use(express.urlencoded({ extended: true}));
-app.use(express.json()); 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// In the case when backend and frontend host and/or port are different, you need to provide CORS headers. To do that use the cors NPM module.
+app.use(cors());
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -33,7 +37,7 @@ if (process.env.NODE_ENV === "production") {
 //=============================================
 
 // API Routes:
-app.use(routes);
+require("./routes/apiRoutes")(app);
 
 //=============================================
 // START LISTENER
