@@ -3,6 +3,7 @@
 //=============================================
 
 const express = require("express")
+const routes = require("./routes")
 
 //=============================================
 // CREATE AND CONFIGURE SERVER
@@ -26,18 +27,13 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-
-
 //=============================================
 // BUILD ROUTES
 // Creates route files that directs the server to take certain actions when users visit or request data from various URLs 
 //=============================================
 
 // API Routes:
-require("./routes/apiRoutes")(app);
-
-// HTML Routes:
-require("./routes/htmlRoutes")(app);
+app.use(routes);
 
 //=============================================
 // START LISTENER
