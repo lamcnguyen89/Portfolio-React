@@ -1,58 +1,50 @@
+//=============================================
+// SETUP AND OBTAIN DEPENDENCIES
+//=============================================
 
+const express = require("express")
 
-const express = require('express');
-const bodyParser = require('body-parser');
-const nodemailer = require('nodemailer');
-const cors = require('cors');
+//=============================================
+// CREATE AND CONFIGURE SERVER
+// Set up the basic properties of the server
+//=============================================
 
+// Create the "express" server:
 const app = express();
 
-const port = 4444;
+// Sets the initial Port that the server will listen through for client-side requests.
+// process.env.PORT is a command that means that the server will listen to whatever number is in the environmental variable PORT. 
+const PORT = process.env.PORT || 666
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+// Sets up the Express app to handle data parsing using middleware.
+// json and urlencoded are both part of bodyParse in Express: https://github.com/expressjs/body-parser
+app.use(express.urlencoded({ extended: true}));
+app.use(express.json()); 
 
-app.use(cors());
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
-app.listen(port, () => {
-  console.log('We are live on port 4444');
-});
 
 
-app.get('/', (req, res) => {
-  res.send('Welcome to my api');
-})
+//=============================================
+// BUILD ROUTES
+// Creates route files that directs the server to take certain actions when users visit or request data from various URLs 
+//=============================================
 
-app.post('/api/v1', (req,res) => {
-    var data = req.body;
-  
-  var smtpTransport = nodemailer.createTransport({
-    service: 'Gmail',
-    port: 465,
-    auth: {
-      user: 'USERNAME',
-      pass: 'PASSWORD'
-    }
-  });
+// API Routes:
+require("./routes/apiRoutes")(app);
 
-  var mailOptions = {
-    from: data.email,
-    to: 'ENTER_YOUR_EMAIL',
-    subject: 'ENTER_YOUR_SUBJECT',
-    html: `<p>${data.name}</p>
-            <p>${data.email}</p>
-            <p>${data.message}</p>`
-  };
+// HTML Routes:
+require("./routes/htmlRoutes")(app);
 
-  smtpTransport.sendMail(mailOptions,
-    (error, response) => {
-      if(error) {
-        res.send(error)
-      }else {
-        res.send('Success')
-      }
-      smtpTransport.close();
-    });
-    
-    })
+//=============================================
+// START LISTENER
+// The code below starts our software server. Almost like initializing a function after creating the function.
+//=============================================
+
+app.listen(PORT, function() {
+    console.log(`Listening on Port: ${PORT}`)
+} )
 

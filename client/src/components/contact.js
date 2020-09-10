@@ -65,30 +65,38 @@ class Contact extends Component {
                                     onSubmit = {(e) => this.formSubmit(e)}
                                 >
                                     <article className="form-group">
-                                        <label htmlFor="formGroupExampleInput">Name</label>
+                                        <label htmlFor="name-input">Name</label>
                                         <input 
                                             type="text" 
-                                            className="form-control" id="formGroupExampleInput" 
+                                            className="form-control" 
+                                            id="name-input" 
                                             placeholder="First Name and Last Name"
+                                            name="name"
                                             value={this.state.name} 
                                             onChange={e => this.setState({name: e.target.value})}
                                         />
                                     </article>
                                     <article className="form-group">
-                                        <label htmlFor="formGroupExampleInput2">Email</label>
+                                        <label htmlFor="email-input">Email</label>
                                         <input 
                                             type="text" 
-                                            className="form-control" id="formGroupExampleInput2" placeholder="Example@gmail.com"
+                                            className="form-control" 
+                                            id="email-input" 
+                                            placeholder="Example@gmail.com"
+                                            name="email"
                                             value={this.state.email} 
                                             onChange={e => this.setState({email: e.target.value})} 
                                         />
                                     </article>
                                     <article className="form-group">
-                                        <label htmlFor="exampleFormControlTextarea1">Message</label>
+                                        <label htmlFor="message-input">Message</label>
                                         <textarea 
-                                            className="form-control" id="exampleFormControlTextarea1" 
+                                            className="form-control" 
+                                            id="message-input" 
+                                            type="text"
                                             rows={5} 
-                                            placeholder="Enter your message here." defaultValue={""}
+                                            placeholder="Enter your message here."
+                                            name="message"
                                             value={this.state.message} 
                                             onChange={e => this.setState({message: e.target.value})} 
                                         />
