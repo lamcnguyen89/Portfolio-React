@@ -1,7 +1,7 @@
 {
   "name": "lam-portfolio",
   "version": "1.0.0",
-  "description": "Personal Portfolio for Lam Nguyen",  
+  "description": "Personal Portfolio for Lam Nguyen",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -24,3 +24,4 @@
     "dotenv": "^8.2.0",
     "nodemailer": "^6.4.11"
   }
+}
