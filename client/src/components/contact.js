@@ -19,20 +19,17 @@ class Contact extends Component {
     formSubmit(e){
         e.preventDefault();
 
-        console.log(this.state);
+        
 
         Axios({
           method: "POST", 
           url:"http://localhost:666/send", 
           data: this.state
-        }).then((response)=>{
-          if (response.data.status === 'success'){
-            console.log("Message Sent."); 
+        }).then(
+            console.log("Form submitted successfully"),
             this.resetForm()
-          }else if(response.data.status === 'fail'){
-            console.log("Message failed to send.")
-          }
-        })
+        ).catch(err => console.log(err))
+
       }
         
 
