@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
+import { BrowserRouter, Route, Redirect} from 'react-router-dom';
 
 
 class Contact extends Component {
@@ -11,7 +12,8 @@ class Contact extends Component {
         this.state = {
             name: '',
             email: '',
-            message: ''
+            message: '',
+            messageSent: false
             
         }
     }
@@ -26,8 +28,8 @@ class Contact extends Component {
           url:"http://localhost:666/send", 
           data: this.state
         }).then(
-            console.log("Form submitted successfully"),
-            this.resetForm()
+                this.setState({ messageSent: true }),
+                this.resetForm()
         ).catch(err => console.log(err))
 
       }
@@ -37,12 +39,18 @@ class Contact extends Component {
         this.setState({
             name: '',
             message: '',
-            email: ''
+            email: '',
+            messageSent: 'false'
             
         })
     }
 
-    render() { 
+    render() {
+        if (this.state.messageSent) {
+            // redirect to the thanks page if message is sent
+            return <Redirect to = {{ pathname: "/thanks" }} />;
+          }
+        
         return (  
             <>
                 {/* This section contains the html for the contact form. 
