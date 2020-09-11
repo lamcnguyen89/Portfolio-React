@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
-import { BrowserRouter, Route, Redirect} from 'react-router-dom';
+import { Redirect} from 'react-router-dom';
 
 
 class Contact extends Component {
@@ -8,20 +8,20 @@ class Contact extends Component {
         // Remember that super() is called inside a react componnt only if it has a constructor. 
         // super(props) allows access to this.props in the constructor
         // Source: https://blog.mailtrap.io/react-contact-form/
+        // Source: https://stackoverflow.com/questions/53900739/redirection-using-axios-and-react
         super(props);
         this.state = {
             name: '',
             email: '',
             message: '',
-            messageSent: false
+            messageSent: ''
             
         }
     }
 
+    // Function to submit the user's message to the backend server that will then send the message to gmail.
     formSubmit(e){
         e.preventDefault();
-
-        
 
         Axios({
           method: "POST", 
@@ -30,17 +30,18 @@ class Contact extends Component {
         }).then(
                 this.setState({ messageSent: true }),
                 this.resetForm()
-        ).catch(err => console.log(err))
-
-      }
+        ).catch(
+                console.log("There was an error sending your message")
+        )
+      };
         
-
+    // Resets the Contact form by resetting the state
     resetForm = () => {
         this.setState({
             name: '',
             message: '',
             email: '',
-            messageSent: 'false'
+            messageSent: ''
             
         })
     }
@@ -49,7 +50,7 @@ class Contact extends Component {
         if (this.state.messageSent) {
             // redirect to the thanks page if message is sent
             return <Redirect to = {{ pathname: "/thanks" }} />;
-          }
+        } 
         
         return (  
             <>

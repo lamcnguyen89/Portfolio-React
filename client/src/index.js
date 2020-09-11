@@ -4,6 +4,14 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+// Import Bootstrap
+// Source: https://stackoverflow.com/questions/50980046/bootstrap-dropdown-not-working-in-react
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
+import $ from 'jquery';
+import Popper from 'popper.js';
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
